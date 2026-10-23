@@ -6,3 +6,12 @@
 *.toc
 *.fls
 *.fdb_latexmk
+
+# Additional LaTeX auxiliary files
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.nav
+*.snm
+*.vrb
