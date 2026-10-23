@@ -12,9 +12,9 @@ for the Department of Mathematics and Statistics (DMS), MSU-IIT.
 
 
 
-\- `test.tex` — A sample LaTeX source document.
+\- `projects/sample/test.tex` — A sample LaTeX source document.
 
-\- `test.pdf` — The compiled PDF of the sample document.
+\- `projects/sample/test.pdf` — The compiled PDF of the sample document.
 
 \- `.gitignore` — Rules for excluding temporary LaTeX files.
 
