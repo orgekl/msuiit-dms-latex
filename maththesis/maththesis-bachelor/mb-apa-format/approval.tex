@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% approval.tex
+%%%% undergraduate student version 2024.09
+%%%% Original script by: Julius V. Benitez, Ph.D.
+%%%% Updated by: Karlo S. Orge and Rey R. Cuenca
+%%%% Department of Mathematics and Statistics
+%%%% College of Science and Mathematics
+%%%% MSU-Iligan Institute of Technology
+%%%% 9200 Iligan City, Philippines
+%%%% E-mail: karlo.orge@g.msuiit.edu.ph
+%%%%         rey.cuenca@g.msuiit.edu.ph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% WARNING: DO NOT ATTEMPT TO EDIT ANY PART OF
+%%%% THIS FILE UNLESS YOU KNOW WHAT YOU'RE DOING.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newgeometry{left=1.55in,right=1.3in,top=2.9in,bottom=1.15in}
+\chapter*{ } 			
+\addcontentsline{toc}{chapter}{CERTIFICATE OF PANEL APPROVAL}
+\thispagestyle{empty}%
+\AddToShipoutPicture*{\BackgroundPic}
+
+\begin{center}
+	{\bf CERTIFICATE OF PANEL APPROVAL}
+\end{center}
+{%
+\fontsize{11}{15}\selectfont
+
+\newcolumntype{C}{>{\Centering\arraybackslash}b{0.495\linewidth}}
+\newcommand{\sigblank}[1]{\textbf{\underline{\:#1\:}}}
+\newcommand{\adjsigblank}[2]{\scalebox{#1}{\sigblank{#2}}}
+
+\makeatletter
+\newcommand*{\getnum}[1]{\strip@pt#1}
+\makeatother
+
+\newlength{\wdone}
+\setlength{\wdone}{\minof{1pt}{1pt*\ratio{0.49\linewidth}{\widthof{\sigblank{\panelone}}}}}
+\newcommand{\sfone}{\getnum{\wdone}}
+
+\newlength{\wdtwo}
+\setlength{\wdtwo}{\minof{1pt}{1pt*\ratio{0.49\linewidth}{\widthof{\sigblank{\paneltwo}}}}}
+\newcommand{\sftwo}{\getnum{\wdtwo}}
+
+\setlength\tabcolsep{1pt}
+
+This is to certify that this undergraduate thesis entitled {\bf ``\title"}, prepared and submitted by {\bf \author} in partial fulfillment of the requirements for the degree \MakeUppercase{\textbf{\program}} is hereby recommended for approval:
+
+\vfill
+
+\begin{center}
+	\begin{tabular}{c}
+		\sigblank{\adviser}\\
+		{\footnotesize Adviser}\\
+		\makebox[1in]{\hrulefill}\\[-3pt]
+		{\footnotesize Date}
+	\end{tabular}
+\end{center}
+	
+\vfill
+
+\begin{center}
+	\begin{tabular}{CcC}
+		\adjsigblank{\sfone}{\panelone} && \adjsigblank{\sftwo}{\paneltwo}\\
+		{\footnotesize Thesis Examiner} && {\footnotesize Thesis Examiner}\\
+		\makebox[1in]{\hrulefill} && \makebox[1in]{\hrulefill}\\[-3pt]
+		{\footnotesize Date} && {\footnotesize Date}
+	\end{tabular}
+\end{center}
+
+The Department of Mathematics and Statistics endorses acceptance of this undergraduate thesis in partial fulfillment of the requirements for the degree \program.
+
+\vfill
+
+\begin{center}
+	\begin{tabular}{c}
+		\sigblank{\deptchair}\\
+		{\footnotesize Chair, Department of Mathematics and Statistics}\\
+		\makebox[1in]{\hrulefill}\\[-3pt]
+		{\footnotesize Date}
+	\end{tabular}
+\end{center}
+
+This undergraduate thesis is hereby officially accepted in partial fulfillment of the requirements for the degree \program.
+
+\vfill
+
+\begin{center}
+	\begin{tabular}{c}
+		\sigblank{\csmdean}\\
+		{\footnotesize Dean, College of Science and Mathematics}\\
+		\makebox[1in]{\hrulefill}\\[-3pt]
+		{\footnotesize Date}
+	\end{tabular}
+\end{center}
+}%
+\restoregeometry
