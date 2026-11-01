@@ -15,3 +15,25 @@
 *.nav
 *.snm
 *.vrb
+
+# Additional LaTeX auxiliary files
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.loa
+*.lol
+*.lof
+*.lot
+*.thm
+*.xdv
+*.4ct
+*.4tc
+*.idv
+*.lg
+*.tmp
+*.xref
