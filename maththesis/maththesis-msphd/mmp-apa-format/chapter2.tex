@@ -1,0 +1,175 @@
+\chapter{PRELIMINARIES}
+
+Introductory paragraph for Chapter 2.
+
+\section{Section 1}
+
+Introductory paragraph for Section 1. 
+
+\begin{defn}\label{ss}
+	\parencite{BkEx} Let $\R$~\label{real} denote the set of real numbers. A \textit{successor set} is a subset $S$ of $\R$ with the following properties:
+	\begin{enumerate}
+		\item[(i)] $1\in S$; and
+		\item[(ii)] If $n\in S$, then $n+1\in S$.
+	\end{enumerate}
+\end{defn}
+
+\begin{ex}
+	The set $\R^+$~\label{preal} of positive real numbers is a successor set, since it satisfies properties (i) and (ii) of Definition~\ref{ss}. The set $\R^-$~\label{nreal} of negative real numbers is not a successor set, since $1\notin\R^-$. The open interval $(0,10)$ is not a successor set, because $9\in(0,10)$ but $9+1=10\notin(0,10)$.
+\end{ex}
+
+\begin{prop}\label{ints}
+	The intersection of any collection of successor sets is a successor set.
+\end{prop}
+
+\begin{proof}
+	Let $\mathcal{S}$ be a collection of successor sets, and set $T:=\ds\bigcap_{S\in\mathcal{S}} S$. We will show that $T$ is a successor set by verifying properties (i) and (ii) of Definition~\ref{ss} for the set $T$.
+	\begin{enumerate}
+		\item[(i)] Because each set $S\in\mathcal{S}$ is a successor set, $1\in\mathcal{S}$ for all $S\in\mathcal{S}$. Thus, $1\in T$.
+		\item[(ii)] Let $n\in T$. Then $n\in S$ for all $S\in\mathcal{S}$. Since each set $S\in\mathcal{S}$ is a successor set, it follows that $n+1\in S$ for all $S\in\mathcal{S}$. Hence, $n+1\in T$.
+	\end{enumerate}
+	Therefore, $T$ is a successor set.
+\end{proof}
+
+\begin{defn}\label{nat}
+	\parencite{BkEx} The set of \textit{natural numbers}, denoted by $\N$, is defined to be the intersection of all successor sets of $\R$. In symbols,
+	\[
+	\N:=\bigcap\{S\subseteq\R: S\text{ is a successor set}\}.
+	\]
+\end{defn}
+
+Proposition~\ref{ints} guarantees that $\N$ is a successor set. In fact, by definition, $\N$ is the ``smallest'' among all successor sets of $\R$ in the sense that $\N\subseteq S$ for all successor sets $S$.
+
+From here, we prove the following result that is used to prove statements involving natural numbers. See the book of \textcite{BkEx}.
+
+\begin{thm}[Principle of Mathematical Induction]\label{pmi}
+	Let $P_n$ be a statement involving $n\in\N$. Suppose that the following conditions hold:
+	\begin{description}
+		\item[(PM1)] $P_1$ is true.
+		\item[(PM2)] For $k\in\N$, if $P_k$ is true, then $P_{k+1}$ is true.
+	\end{description}
+	Then $P_n$ is true for all $n\in\N$.
+\end{thm}
+
+\begin{proof}
+	Let $S:=\{m\in\N: P_m\text{ is true}\}.$ The conclusion of the theorem follows if we can prove that $S=\N$. By definition of $S$, we have $S\subseteq\N$, so it is enough to show that $\N\subseteq S$.
+	
+	For this, we claim that $S$ is a successor set. Since $P_1$ is true by \textbf{(PM1)}, $1\in S$. Suppose that $n\in S$. Then $P_n$ is true. By \textbf{(PM2)}, $P_{n+1}$ is true, so that $n+1\in S$. Thus, $S$ is a successor set.
+	
+	Since $\N$ is the intersection of all successor sets, it follows that $\N\subseteq S$. Therefore, $S=\N$.
+\end{proof}
+
+\begin{ex}
+	Prove that for all $n\in\N$,
+	\begin{align}\label{pmiex}
+		1^3 + 2^3 + \cdots + n^3 = \frac{n^2(n+1)^2}{4}.
+	\end{align}
+\end{ex}
+
+\begin{proof}
+	For $n\in\N$, let $P_n$ be statement (\ref{pmiex}). Then $P_1$ is the statement
+	\begin{align}\label{p1}
+		1^3 = \dfrac{1^2(1+1)^2}{4},    
+	\end{align}
+	which is true because both sides of Equation~(\ref{p1}) are equal to 1. To finish the proof using Theorem~\ref{pmi}, it suffices to prove \textbf{(PM2)} for the statement $P_n$. Suppose that for $k\in\N$, $P_k$ is true, that is,
+	\begin{align}\label{pk}
+		1^3 + 2^3 + \cdots + k^3 = \frac{k^2(k+1)^2}{4}.
+	\end{align}
+	We claim that $P_{k+1}$ is true, that is,
+	\begin{align*}
+		1^3 + 2^3 + \cdots + (k+1)^3 = \frac{(k+1)^2(k+2)^2}{4}.
+	\end{align*}
+	Indeed, by using (\ref{pk}) and algebraic manipulation, we have
+	\begin{align*}
+		1^3 + 2^3 + \cdots + (k+1)^3 &= \left(1^3 + 2^3 + \cdots + k^3\right) + (k+1)^3\\
+		&= \frac{k^2(k+1)^2}{4} + (k+1)^3\\
+		&= \frac{k^2(k+1)^2+4(k+1)^3}{4}\\
+		&= \frac{(k+1)^2\big(k^2+4(k+1)\big)}{4}\\
+		&= \frac{(k+1)^2\big(k^2+4k+4\big)}{4}\\
+		&= \frac{(k+1)^2(k+2)^2}{4}.
+	\end{align*}
+\end{proof}
+
+\section{Section 2}
+
+Introductory paragraph for Section 2.
+
+\begin{defn}\label{group}
+	A \textit{group} is a set $G$ together with a map $*$ from $G\times G$ into $G$ (where for $a,b\in G$, the image of $(a,b)$ under $*$ is denoted by $a*b$\label{binop}), called a \textit{binary operation} on $G$, such that the following hold.
+	\begin{description}
+		\item[(G1)] The binary operation $*$ is \textit{associative}:
+		\[
+		(a*b)*c = a*(b*c),\quad\text{for all } a,b,c\in G.
+		\]
+		\item[(G2)] There exists an element in $G$ called the \textit{identity} in $G$ under $*$, denoted by $e$ (or $e_G$~\label{ident} if $G$ needs to be indicated), such that
+		$a*e=e*a=a$ for all $a\in G$.
+		\item[(G3)] For each $a\in G$, there exists an element in $G$ called the \textit{inverse} of $a$ in $G$ under $*$, denoted by $a^{-1}$~\label{inv}, such that $a*a^{-1}=a^{-1}*a=e.$
+	\end{description}
+\end{defn}
+
+\begin{ex}
+	Let $G:=\{u,v,w,x,y,z\}$ and define a binary operation $*$ on $G$ as follows: for $a,b\in G$, $a*b$ is defined to be the element in $G$ on Table~\ref{deesix} located in the same row as that of the element $a$ before the vertical line and in the same column as that of the element $b$ above the horizontal line. For instance, according to the table, we have $w*y=x$ and $y*w=v$. The fact that there is exactly one element in $G$ in each entry on the lower right block of the table ensures that $*$ is a well-defined binary operation on $G$. This table is called a \textit{Cayley table} for the binary operation $*$.
+	
+	\begin{table}[!htbp]
+		\centering
+		\caption{A Cayley table for a binary operation $*$ on the set $\{u,v,w,x,y,z\}$}
+		\vspace{10pt}
+		\begin{tabular}{c|c c c c c c} 
+			$*$ & $u$ & $v$ & $w$ & $x$ & $y$ & $z$ \\ 
+			\hline
+			$u$ & $u$ & $v$ & $w$ & $x$ & $y$ & $z$ \\
+			$v$ & $v$ & $u$ & $y$ & $z$ & $w$ & $x$ \\
+			$w$ & $w$ & $z$ & $u$ & $y$ & $x$ & $v$ \\
+			$x$ & $x$ & $y$ & $z$ & $u$ & $v$ & $w$ \\
+			$y$ & $y$ & $x$ & $v$ & $w$ & $z$ & $u$ \\
+			$z$ & $z$ & $w$ & $x$ & $v$ & $u$ & $y$
+		\end{tabular}
+		\label{deesix}
+	\end{table}
+	
+	\noindent We will show that $G$ is a group under $*$. Note that $*$ is associative. Indeed, we can verify using Table~\ref{deesix} that
+	\[
+	(w*x)*z=y*z=u=w*w=w*(x*z),
+	\]
+	and similar computations hold for all other choices of elements in $G$. Next, the identity element in $G$ under $*$ is $u$, because $v*u=u*v=v$, and similar statements hold for the other elements in $G$. Finally, since $y*z=z*y=u$, we have $y^{-1}=z$ and $z^{-1}=y$, and a quick inspection of Table~\ref{deesix} shows that $u^{-1}=u$, $v^{-1}=v$, $w^{-1}=w$, and $x^{-1}=x$. Therefore, $G$ is a group under $*$.
+\end{ex}
+
+\section{Section 3}
+
+Introductory paragraph for Section 3. All definitions are taken from \textcite{cl05}.
+
+\begin{defn}\label{gr}
+	A \textit{graph} $G$ is a pair $(V(G),E(G))$ consisting of a nonempty finite set $V(G)$ and a set $E(G)$ of unordered pairs of elements of $V(G)$. The sets $V(G)$~\label{vg} and $E(G)$~\label{eg} are called the \textit{vertex set} and the \textit{edge set} of the graph $G$, respectively. The elements of $V(G)$ are called \textit{vertices} in $G$, while the elements of $E(G)$ are called \textit{edges} in $G$. The cardinalities of $V(G)$ and $E(G)$ are called the \textit{order} and the \textit{size} of $G$, respectively.
+\end{defn}
+
+Usually, a graph is represented visually by drawing a point or circle for every vertex of the graph, and drawing a curve (usually a line segment) connecting two vertices, say, $v$ and $w$, if the unordered pair $\{v,w\}$ (written briefly as $vw$) is an edge of the graph.
+
+\begin{ex}
+	Figure~\ref{graphex} is an illustration of a graph $G$ with vertex set $V(G):=\{v_1, v_2, v_3, v_4, v_5, v_6, v_7\}$
+	and edge set $E(G):=\{v_1v_3, v_1v_4, v_2v_4, v_3v_4,\lb v_4v_5, v_4v_6, v_4v_7, v_5v_6\}.$ In this case, the order of $G$ is 7, while its size is 8.
+\end{ex}
+
+\begin{figure}[H]
+	\[
+	\pic
+	\Vertex (0,35) (70,0) (70,70) (140,35) (210,0) (210,70) (280,35)
+	\Edge (0,35) (140,35)
+	\Edge (140,35) (280,35)
+	\Edge (0,35) (70,0)
+	\Edge (70,70) (140,35)
+	\Edge (140,35) (210,0)
+	\Edge (210,70) (210,0)
+	\Edge (140,35) (210,70)
+	\Edge (140,35) (70,0)
+	\Align[c] ($v_1$) (-7,35)
+	\Align[c] ($v_2$) (62,70)
+	\Align[c] ($v_3$) (62,-5)
+	\Align[c] ($v_4$) (140,43)
+	\Align[c] ($v_5$) (218,70)
+	\Align[c] ($v_6$) (218,-5)
+	\Align[c] ($v_7$) (288,35)
+	\cip
+	\]
+	\caption{A graph with 7 vertices and 8 edges}
+	\label{graphex}
+\end{figure}
